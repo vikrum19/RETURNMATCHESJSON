@@ -29,6 +29,7 @@ compareData xs ys = (matches, mismatches)
   where
 
     matches = filter (\x -> x `elem` ys) xs
+    
     mismatches =filter (\x -> x `notElem` ys) xs
 
 
@@ -37,7 +38,7 @@ parseAndCompare x y =
 
   case (eitherDecode x, eitherDecode y) of
 
-    (Right xs, Right ys) -> do
+     (Right xs, Right ys) -> do
 
       let (matches, mismatches) = compareData xs ys
 
@@ -49,9 +50,9 @@ parseAndCompare x y =
 
       mapM_ print mismatches
 
-    (Left e, _) -> putStrLn $ "Error decoding first input: " ++ e
+     (Left e, _) -> putStrLn $ "Error decoding first input: " ++ e
 
-    (_, Left e) -> putStrLn $ "Error decoding second input: " ++ e
+     (_, Left e) -> putStrLn $ "Error decoding second input: " ++ e
 
     
 
