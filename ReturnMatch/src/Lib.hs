@@ -12,9 +12,9 @@ data Person = Person
   } deriving (Show, Eq)
 
 
--- to decode a Json value we first convert the Json string to value of our haskell value after making the Person type instance of FromJson class we can use 
--- returns mzero if any value other than JsonObject is passed
--- decode or eitherDecode function to decode to sepcifiv type
+{- to decode a Json value we first convert the Json string to value of our haskell value after making the Person type instance of FromJson class we can use 
+ returns mzero if any other value than JsonObject is passed
+ decode or eitherDecode function to decode to sepcifiv type-}
 
 instance FromJSON Person where
 
